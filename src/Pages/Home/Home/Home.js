@@ -1,13 +1,18 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-import { FcGoogle } from "react-icons/fc";
-import { GrGithub } from "react-icons/gr";
+import { useLoaderData } from 'react-router-dom';
+import CourseDetails from '../../../Shared/CourseDetails/CourseDetails';
 
 const Home = () => {
+    const allCourse = useLoaderData();
     return (
         <div>
-            <Button variant="light"><FcGoogle></FcGoogle> Log in with Google</Button>
-            <Button variant="light"><GrGithub></GrGithub> Log in with GitHub</Button>
+            <h3>Course: {allCourse.length}</h3>
+            {
+                allCourse.map(course => <CourseDetails
+                    key={course._id}
+                    course={course}>
+                </CourseDetails>)
+            }
         </div>
     );
 };
