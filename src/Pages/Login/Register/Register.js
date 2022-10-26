@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
+    const [error, setError] = useState('');
+    const [accepted, setAccepted] = useState(false)
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateCurrentUser } = useContext(AuthContext);
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -20,9 +22,28 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setError('');
                 form.reset();
+                handleUpdateUserProfile(name, photoURL);
             })
-            .catch(e => console.error(e))
+            .catch(e => {
+                console.error(e)
+                setError(e.message)
+            })
+    }
+
+    const handleUpdateUserProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateCurrentUser(profile)
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+
+    const handleAccepted = event => {
+        setAccepted(event.target.checked)
     }
 
     return (
@@ -43,11 +64,19 @@ const Register = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control name='password' type="password" placeholder="Enter Password" required />
             </Form.Group>
-            <Form.Text className="text-danger">
-            </Form.Text>
-            <Button variant="primary" type="submit">
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                <Form.Check
+                    onClick={handleAccepted}
+                    type="checkbox"
+                    label="Accept terms and conditions" />
+            </Form.Group>
+
+            <Button variant="primary" type="submit" disabled={!accepted}>
                 Register
             </Button>
+            <Form.Text className="text-danger">
+                {error}
+            </Form.Text>
         </Form>
     );
 };

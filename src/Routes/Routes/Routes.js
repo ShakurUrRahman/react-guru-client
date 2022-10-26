@@ -7,6 +7,8 @@ import Course from "../../Pages/Course/Course/Course";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
+import Purchase from "../../Pages/Purchase/Purchase";
+import PrivateRoute from "../PrivsteRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -35,6 +37,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/purchase',
+                element: <PrivateRoute><Purchase></Purchase></PrivateRoute>
             }
         ]
     }

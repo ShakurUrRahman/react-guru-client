@@ -17,10 +17,10 @@ const Main = () => {
                     <Col lg="1">
                         <LeftSideBox></LeftSideBox>
                     </Col>
-                    <Col lg="9">
+                    <Col lg="8" >
                         <Outlet></Outlet>
                     </Col>
-                    <Col lg="2">
+                    <Col lg="3">
                         <RightSideNav></RightSideNav>
                     </Col>
                 </Row>

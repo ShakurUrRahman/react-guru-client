@@ -33,9 +33,9 @@ const LeftSideBox = () => {
 
     return (
         <div>
-            <div>
-                <Button onClick={handleGoogleSignIn} variant="light"><FcGoogle></FcGoogle> Log in with Google</Button>
-                <Button onClick={handleGitHubSignIN} variant="light"><GrGithub></GrGithub> Log in with GitHub</Button>
+            <div >
+                <Button onClick={handleGoogleSignIn} className='mt-5' variant="light"><FcGoogle></FcGoogle> Log in with <span className='fw-bold'>Google</span></Button>
+                <Button onClick={handleGitHubSignIN} variant="light"><GrGithub></GrGithub> Log in with <span className='fw-bold'>GitHub</span></Button>
             </div>
         </div>
     );

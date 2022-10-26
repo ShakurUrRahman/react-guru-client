@@ -7,7 +7,7 @@ import { BsFillStarFill } from "react-icons/bs";
 const CourseDetails = ({ course }) => {
     const { name, _id, picture, created_by, ratings, about } = course;
     return (
-        <Card className="mb-5">
+        <Card className="mb-5 ">
             <Card.Header><img className='w-100' src={picture} alt='' /></Card.Header>
             <Card.Body>
                 <Card.Title>{name}</Card.Title>

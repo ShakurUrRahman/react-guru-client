@@ -1,20 +1,20 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CourseDetails from '../../../Shared/CourseDetails/CourseDetails';
-import MyCarousel from '../../Carousel/Carousel';
-import Carousell from '../../Carousel/Carousel';
 
 const Home = () => {
     const allCourse = useLoaderData();
     return (
         <div>
-            <h3>Course: {allCourse.length}</h3>
-            {
-                allCourse.map(course => <CourseDetails
-                    key={course._id}
-                    course={course}>
-                </CourseDetails>)
-            }
+            <h2 className='text-center'>We design this six course for you:</h2>
+            <div>
+                {
+                    allCourse.map(course => <CourseDetails
+                        key={course._id}
+                        course={course}>
+                    </CourseDetails>)
+                }
+            </div>
         </div>
     );
 };
