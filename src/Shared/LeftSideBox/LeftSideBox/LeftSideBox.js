@@ -1,14 +1,41 @@
-import React from 'react';
+import { logDOM } from '@testing-library/react';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
+import React, { useContext } from 'react';
 import { Button } from 'react-bootstrap';
 import { FcGoogle } from 'react-icons/fc';
 import { GrGithub } from 'react-icons/gr';
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+
 
 const LeftSideBox = () => {
+    const { providerLogin } = useContext(AuthContext);
+
+    const googleProvider = new GoogleAuthProvider();
+    const gitHubProvider = new GithubAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
+
+    const handleGitHubSignIN = () => {
+        providerLogin(gitHubProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error))
+    }
+
     return (
         <div>
             <div>
-                <Button variant="light"><FcGoogle></FcGoogle> Log in with Google</Button>
-                <Button variant="light"><GrGithub></GrGithub> Log in with GitHub</Button>
+                <Button onClick={handleGoogleSignIn} variant="light"><FcGoogle></FcGoogle> Log in with Google</Button>
+                <Button onClick={handleGitHubSignIN} variant="light"><GrGithub></GrGithub> Log in with GitHub</Button>
             </div>
         </div>
     );

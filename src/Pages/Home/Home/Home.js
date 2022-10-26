@@ -1,6 +1,8 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import CourseDetails from '../../../Shared/CourseDetails/CourseDetails';
+import MyCarousel from '../../Carousel/Carousel';
+import Carousell from '../../Carousel/Carousel';
 
 const Home = () => {
     const allCourse = useLoaderData();

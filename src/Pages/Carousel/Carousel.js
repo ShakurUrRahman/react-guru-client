@@ -4,7 +4,7 @@ import online from '../../assets/carousel/online.jpg'
 import webinar from '../../assets/carousel/webinar.jpg'
 import working from '../../assets/carousel/working.jpg'
 
-const Carousell = () => {
+const MyCarousel = () => {
     return (
         <Carousel>
             <Carousel.Item>
@@ -41,4 +41,4 @@ const Carousell = () => {
     );
 };
 
-export default Carousell;
+export default MyCarousel;
