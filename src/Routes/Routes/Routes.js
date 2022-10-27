@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
+import Blog from "../../Pages/Blog/Blog";
 import MyCarousel from "../../Pages/Carousel/Carousel";
 import Carousell from "../../Pages/Carousel/Carousel";
 import Category from "../../Pages/Category/Category/Category";
@@ -43,6 +44,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/purchase/:id',
                 element: <PrivateRoute><Purchase></Purchase></PrivateRoute>,
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
         ]
     }
