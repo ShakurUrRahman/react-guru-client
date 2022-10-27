@@ -5,7 +5,7 @@ const RightSideNav = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/react-categories')
+        fetch('https://react-guru-server.vercel.app/react-categories')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
