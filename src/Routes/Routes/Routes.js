@@ -8,12 +8,14 @@ import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import Purchase from "../../Pages/Purchase/Purchase";
+import ErrorPage from "../../Shared/ErrorPage/ErrorPage";
 import PrivateRoute from "../PrivsteRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
@@ -39,8 +41,8 @@ export const routes = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/purchase',
-                element: <PrivateRoute><Purchase></Purchase></PrivateRoute>
+                path: '/purchase/:id',
+                element: <PrivateRoute><Purchase></Purchase></PrivateRoute>,
             }
         ]
     }

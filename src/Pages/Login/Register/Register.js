@@ -1,6 +1,8 @@
+import { signOut } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { IoLogOut } from 'react-icons/io5';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
@@ -25,6 +27,7 @@ const Register = () => {
                 setError('');
                 form.reset();
                 handleUpdateUserProfile(name, photoURL);
+                signOut()
             })
             .catch(e => {
                 console.error(e)
@@ -47,37 +50,40 @@ const Register = () => {
     }
 
     return (
-        <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Your Name</Form.Label>
-                <Form.Control name='name' type="text" placeholder="Enter Name" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Your Photo URL</Form.Label>
-                <Form.Control name='photoURL' type="text" placeholder="Your Photo URL" />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control name='email' type="email" placeholder="Enter email" required />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control name='password' type="password" placeholder="Enter Password" required />
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check
-                    onClick={handleAccepted}
-                    type="checkbox"
-                    label="Accept terms and conditions" />
-            </Form.Group>
+        <div className='mt-5 p-2'>
+            <h3 className='text-center fst-italic mb-2'>Register to purchase our courses</h3>
+            <Form onSubmit={handleSubmit} className='mt-5'>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Your Name</Form.Label>
+                    <Form.Control name='name' type="text" placeholder="Enter Name" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Your Photo URL</Form.Label>
+                    <Form.Control name='photoURL' type="text" placeholder="Your Photo URL" />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control name='email' type="email" placeholder="Enter email" required />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control name='password' type="password" placeholder="Enter Password" required />
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                    <Form.Check
+                        onClick={handleAccepted}
+                        type="checkbox"
+                        label="Accept terms and conditions" />
+                </Form.Group>
 
-            <Button variant="primary" type="submit" disabled={!accepted}>
-                Register
-            </Button>
-            <Form.Text className="text-danger">
-                {error}
-            </Form.Text>
-        </Form>
+                <Button variant="primary" type="submit" disabled={!accepted}>
+                    Register
+                </Button>
+                <Form.Text className="text-danger">
+                    {error}
+                </Form.Text>
+            </Form>
+        </div>
     );
 };
 

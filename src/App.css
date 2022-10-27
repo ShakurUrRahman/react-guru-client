@@ -7,6 +7,22 @@
   pointer-events: none;
 }
 
+#light body {
+  background-color: wheat;
+}
+
+#dark body {
+  background-color: #282c34;
+}
+
+#light {
+  background-color: wheat;
+}
+
+#dark {
+  background-color: #282c34;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -32,6 +48,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

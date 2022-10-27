@@ -32,11 +32,9 @@ const LeftSideBox = () => {
     }
 
     return (
-        <div>
-            <div >
-                <Button onClick={handleGoogleSignIn} className='mt-5' variant="light"><FcGoogle></FcGoogle> Log in with <span className='fw-bold'>Google</span></Button>
-                <Button onClick={handleGitHubSignIN} variant="light"><GrGithub></GrGithub> Log in with <span className='fw-bold'>GitHub</span></Button>
-            </div>
+        <div className='mt-5'>
+            <Button onClick={handleGoogleSignIn} className='me-2 mb-lg-2' variant="light"><FcGoogle></FcGoogle> Log in with <span className='fw-bold'>Google</span></Button>
+            <Button onClick={handleGitHubSignIN} className='' variant="light"><GrGithub></GrGithub> Log in with <span className='fw-bold'>GitHub</span></Button>
         </div>
     );
 };
