@@ -14,7 +14,7 @@ const MyCarousel = () => {
                     alt="First slide"
                 />
                 <Carousel.Caption>
-                    <h3 className='text-success fw-bold mb-5'>Here your future is calling!</h3>
+                    <h3 className='text-success fw-bold '>Future is calling!</h3>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -24,7 +24,7 @@ const MyCarousel = () => {
                     alt="Second slide"
                 />
                 <Carousel.Caption>
-                    <h3 className='text-success fw-bold mb-5'>Don't give up!</h3>
+                    <h3 className='text-success fw-bold  '>Don't give up!</h3>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -34,7 +34,7 @@ const MyCarousel = () => {
                     alt="Third slide"
                 />
                 <Carousel.Caption>
-                    <h3 className='text-success fw-bold mb-5'>Stay hungry! Stay foolish!!</h3>
+                    <h3 className='text-success fw-bold '>Be curious!</h3>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
