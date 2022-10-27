@@ -28,15 +28,16 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features">FAQ</Nav.Link>
+                            <Nav.Link>FAQ</Nav.Link>
                         </Nav>
                         <Nav>
                             <>
                                 {
                                     user?.uid ?
                                         <>
-                                            <span>{user?.displayName}</span>
+                                            <span className='text-white'>{user?.displayName}</span>
                                             <Button className='ms-2' onClick={handleLogOut} variant="light">Log Out</Button>
+
                                         </>
                                         :
                                         <div>
@@ -45,7 +46,7 @@ const Header = () => {
                                         </div>
                                 }
                             </>
-                            <Nav.Link eventKey={2} href="#memes">
+                            <Nav.Link eventKey={2}>
                                 {user?.photoURL ?
                                     <Image roundedCircle style={{ height: '30px' }} src={user?.photoURL} alt='' data-bs-toggle="tooltip" data-bs-placement="right" title={user?.displayName}></Image>
                                     : <IoPerson></IoPerson>}

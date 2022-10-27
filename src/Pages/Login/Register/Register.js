@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { IoLogOut } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
@@ -78,7 +79,7 @@ const Register = () => {
 
                 <Button variant="primary" type="submit" disabled={!accepted}>
                     Register
-                </Button>
+                </Button> <p>Already have an account? <Link to='/login'>Login</Link></p>
                 <Form.Text className="text-danger">
                     {error}
                 </Form.Text>

@@ -1,26 +1,6 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-#light body {
-  background-color: wheat;
-}
-
-#dark body {
-  background-color: #282c34;
-}
-
-#light {
-  background-color: wheat;
-}
-
-#dark {
-  background-color: #282c34;
 }
 
 @media (prefers-reduced-motion: no-preference) {
